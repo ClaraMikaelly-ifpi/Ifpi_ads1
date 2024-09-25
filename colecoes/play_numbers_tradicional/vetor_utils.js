@@ -26,6 +26,24 @@ export function adicionarValoresLista(lista, item){
     return lista
 }
 
+// funcao para mapear
+export function mapear(vetor, transformadora){
+    let novoVetor = []
+    for (let i = 0; i < vetor.length; i++){
+        novoVetor.push(transformadora(vetor[i]))
+    }
+}
+
+// funcao para filtrar
+export function filtrar(vetor, criterio){
+    let novoVetor = []
+    for(let i of vetor){
+        if(criterio(i)){
+            novoVetor.push(i)
+        }
+    }
+}
+
 // funcao para mostar itens de um vetor
 export function mostrarItensVetor(vetor, titulo){
     mostrarTexto(`\n ----> ${titulo}`)
